@@ -1,3 +1,10 @@
+/*
+******************************************************************************************************************
+Parts of this file are from X-CASH Foundation - All Rights Reserved, Copyright (C) 2018-2022
+See "X-CASH Foundation - Copyrighted Software License" for more details
+******************************************************************************************************************
+*/
+
 #ifndef DEFINE_MACRO_FUNCTIONS_H_   /* Include guard */
 #define DEFINE_MACRO_FUNCTIONS_H_
 

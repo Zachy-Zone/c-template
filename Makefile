@@ -1,3 +1,8 @@
+#******************************************************************************************************************
+#Parts of this file are from X-CASH Foundation - All Rights Reserved, Copyright (C) 2018-2022
+#See "X-CASH Foundation - Copyrighted Software License" for more details
+#******************************************************************************************************************
+
 # Color print variables
 COLOR_PRINT_RED ?= "\033[1;31m"
 COLOR_PRINT_GREEN ?= "\033[1;32m"

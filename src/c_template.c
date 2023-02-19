@@ -1,3 +1,10 @@
+/*
+******************************************************************************************************************
+Parts of this file are from X-CASH Foundation - All Rights Reserved, Copyright (C) 2018-2022
+See "X-CASH Foundation - Copyrighted Software License" for more details
+******************************************************************************************************************
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
