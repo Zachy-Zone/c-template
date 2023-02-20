@@ -1,6 +1,6 @@
 /*
 ********************************************************************************************************************************************************
-Parts of this file, similarites of code or ideas are from X-CASH Foundation - All Rights Reserved Copyright (C) 2018-2022
+Parts of this file, similarities of code or ideas are from X-CASH Foundation - All Rights Reserved Copyright (C) 2018-2022
 See "X-CASH Foundation - Copyrighted Software License" for more details
 ********************************************************************************************************************************************************
 */
