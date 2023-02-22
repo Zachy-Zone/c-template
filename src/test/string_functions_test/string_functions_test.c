@@ -52,16 +52,17 @@ int string_functions_test(void)
   // run the test
 
   // createSession
+  clock_t createSessionBegin = clock();
   memset(data_test,0,sizeof(data_test));
   if (createSession(data_test) == 1 && strlen(data_test) == SESSION_LENGTH)
   {
-    fprintf(stdout,COLOR_PRINT_GREEN "PASSED! createSession" COLOR_PRINT_END);
+    fprintf(stdout,COLOR_PRINT_GREEN "PASSED! createSession - Completed in: %f seconds\n" COLOR_PRINT_END,(double)(clock() - createSessionBegin) / CLOCKS_PER_SEC);
     fflush(stdout);
     countTest++;
   }
   else
   { 
-    fprintf(stdout,COLOR_PRINT_RED "FAILED! createSession" COLOR_PRINT_END);
+    fprintf(stdout,COLOR_PRINT_RED "FAILED! createSession\n" COLOR_PRINT_END);
     fflush(stdout);
   }
 

@@ -43,7 +43,7 @@ int time_functions_test(void)
   // Variables
 
   // write the start test message
-  fprintf(stdout,COLOR_PRINT_YELLOW TEST_OUTLINE "\ntime_functions_test - Total test: %u\n" TEST_OUTLINE "\n\n" COLOR_PRINT_END,TIME_FUNCTIONS_TOTAL_TEST);
+  fprintf(stdout,COLOR_PRINT_YELLOW TEST_OUTLINE "\ntimeFunctionsTest - Total test: %u\n" TEST_OUTLINE "\n\n" COLOR_PRINT_END,TIME_FUNCTIONS_TOTAL_TEST);
   fflush(stdout);
 
   // start the timer
@@ -52,17 +52,18 @@ int time_functions_test(void)
   // run the test
 
   // currentTime
+  clock_t currentTimeBegin = clock();
   memset(data_test,0,sizeof(data_test));
   currentTime(data_test);
   if (strstr(data_test,"UTC") != NULL)
   {
-    fprintf(stdout,COLOR_PRINT_GREEN "PASSED! currentTime" COLOR_PRINT_END);
+    fprintf(stdout,COLOR_PRINT_GREEN "PASSED! currentTime - Completed in: %f seconds\n" COLOR_PRINT_END,(double)(clock() - currentTimeBegin) / CLOCKS_PER_SEC);
     fflush(stdout);
     countTest++;
   }
   else
   {
-    fprintf(stdout,COLOR_PRINT_RED "FAILED! currentTime" COLOR_PRINT_END);
+    fprintf(stdout,COLOR_PRINT_RED "FAILED! currentTime\n" COLOR_PRINT_END);
     fflush(stdout);
   }
 
@@ -71,7 +72,7 @@ int time_functions_test(void)
   double timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;  
 
   // write the end test message
-  fprintf(stdout,COLOR_PRINT_YELLOW "\n\n" TEST_OUTLINE "\ntime_functions_test - Completed in: %f seconds, Passed test: %u, Failed test: %u\n" TEST_OUTLINE "\n\n\n" COLOR_PRINT_END,timeSpent,countTest,TIME_FUNCTIONS_TOTAL_TEST-countTest);
+  fprintf(stdout,COLOR_PRINT_YELLOW "\n\n" TEST_OUTLINE "\ntimeFunctionsTest - Completed in: %f seconds, Passed test: %u, Failed test: %u\n" TEST_OUTLINE "\n\n\n" COLOR_PRINT_END,timeSpent,countTest,TIME_FUNCTIONS_TOTAL_TEST-countTest);
   fflush(stdout);
   return countTest;
 }
