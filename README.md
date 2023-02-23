@@ -23,6 +23,7 @@ The following table summarizes the tools and libraries required to run c-templat
 | Dependencies | Min. version | Recommended version |
 | :--- | :--- | :--- |
 | **GCC** | 9.0 | 12.2  |
+| **libssl-dev** | 3.0 | 3.0.8  |
 
 ## Build
 Build using the make file
