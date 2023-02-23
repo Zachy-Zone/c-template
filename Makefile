@@ -47,14 +47,18 @@ INC_DIRS := $(shell find $(SRC_DIRS) -type d)
 # Prefix all source directories with -I
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
-# MongoDB include directories
-#MongoDB_INC_DIRS := -I/usr/local/include/libbson-1.0 -I/usr/local/include/libmongoc-1.0
+# MongoDB
+MongoDB_INC_DIRS := $(shell test -d /usr/local/include/libbson-1.0 && echo -I/usr/local/include/libbson-1.0 -I/usr/local/include/libmongoc-1.0 || echo)
+
+# OpenSSL
+OpenSSL_INC_DIRS := $(shell test -d /root/Installed_Programs/openssl_build/include && echo -I/root/Installed_Programs/openssl_build/include || echo)
+OpenSSL_LD_DIRS := $(shell test -d /root/Installed_Programs/openssl_build/lib64 && echo -L/root/Installed_Programs/openssl_build/lib64 || echo)
 
 # C flags
-CFLAGS ?= $(INC_FLAGS) $(MongoDB_INC_DIRS) -MMD -MP
+CFLAGS ?= $(INC_FLAGS) $(MongoDB_INC_DIRS) $(OpenSSL_INC_DIRS) -MMD -MP
 
 # Linker flags
-LDFLAGS ?= -lresolv -lpthread -lcrypto
+LDFLAGS ?= $(OpenSSL_LD_DIRS) -lresolv -lpthread -lcrypto
 
 # Set the compiler flags
 COMPILERFLAGS ?= -Wall -Wextra -Wstrict-prototypes -Wcast-qual -Wfloat-equal -Wundef -Wshadow -Wcast-align -Wstrict-overflow -Wdouble-promotion -fexceptions -pie -fPIE -Wl,dynamicbase -Wl,nxcompat
